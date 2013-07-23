@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>example usage</title>
+  </head>
+  <body>
+    <a href="javascript:var webProperty = new Analytics.WebProperty('UA-123-Y'); webProperty.optout(); alert('Cookie set! Reload the page to view the result');">Click to opt-out of analytics tracking</a>
+    <script src="./../vendor/assets/javascripts/optout.analytics.js"></script>
+    <script>
+      var webProperty = new Analytics.WebProperty('UA-123-Y')
+      if (webProperty.has_optout_cookie()) {
+        webProperty.optout();
+        alert('Opt-out cookie detected. Analytics tracking is DISABLED for property: ' + webProperty.id);
+      }
+    </script>
+  </body>
+</html>
